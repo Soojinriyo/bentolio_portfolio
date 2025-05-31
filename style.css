@@ -1,18 +1,28 @@
 body {
-  font-family: 'Gilroy', Arial, sans-serif;
   background: #F9F1F0;
-  color: #000;
   margin: 0;
-  padding: 0;
+  font-family: 'Gilroy', Arial, sans-serif;
+  color: #000;
 }
-header {
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+.card {
   background: #FADCD9;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 24px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.header-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 48px;
-  border-radius: 20px;
-  margin: 24px;
+  margin-bottom: 32px;
 }
 .logo {
   font-size: 25px;
@@ -26,45 +36,56 @@ nav a {
   font-size: 16px;
   font-weight: 300;
 }
-.intro {
-  background: #FADCD9;
-  margin: 24px;
-  border-radius: 20px;
-  padding: 56px 32px;
+.intro-card {
+  margin: 0 24px 32px 24px;
   text-align: left;
+  background: #FADCD9;
 }
-.intro h1 {
+.intro-card h1 {
   font-size: 56px;
   font-weight: 700;
   margin: 0;
 }
-.about, .work, .contact {
-  background: #FADCD9;
-  margin: 24px;
-  border-radius: 20px;
-  padding: 32px;
+.row {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
-.work-list {
+.about-card, .work-card, .contact-card, .socials-card {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+.work-card .work-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.work-item {
+.work-card .work-item {
   background: #F8AFA6;
   padding: 16px;
   border-radius: 16px;
   font-size: 25px;
   font-weight: 500;
 }
-footer {
-  margin: 24px;
-  text-align: center;
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
 }
 .socials a {
-  margin: 0 16px;
   text-decoration: none;
   color: #000;
   font-size: 15px;
   font-weight: 300;
   text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .about-card, .work-card, .contact-card, .socials-card {
+    margin: 24px 0;
+  }
 }
