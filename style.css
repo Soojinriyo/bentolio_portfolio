@@ -12,10 +12,10 @@ body {
 .card {
   background: #FADCD9;
   border-radius: 20px;
-  box-sizing: border-box;
   margin: 24px;
   padding: 32px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-sizing: border-box;
 }
 .header-card {
   display: flex;
@@ -39,28 +39,29 @@ nav a {
 .intro-card {
   margin: 0 24px 32px 24px;
   text-align: left;
-  background: #FADCD9;
 }
 .intro-card h1 {
   font-size: 56px;
   font-weight: 700;
   margin: 0;
 }
-.row {
-  display: flex;
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 24px;
-  justify-content: center;
+  margin: 0 24px;
 }
-.about-card, .work-card, .contact-card, .socials-card {
-  flex: 1 1 0;
-  min-width: 300px;
-}
-.work-card .work-list {
+.about-card { grid-column: 1; grid-row: 1; }
+.work-card { grid-column: 2; grid-row: 1; }
+.contact-card { grid-column: 1; grid-row: 2; }
+.socials-card { grid-column: 2; grid-row: 2; }
+.work-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-.work-card .work-item {
+.work-item {
   background: #F8AFA6;
   padding: 16px;
   border-radius: 16px;
@@ -81,9 +82,9 @@ nav a {
   text-transform: uppercase;
 }
 @media (max-width: 900px) {
-  .row {
-    flex-direction: column;
-    gap: 0;
+  .main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
   }
   .about-card, .work-card, .contact-card, .socials-card {
     margin: 24px 0;
